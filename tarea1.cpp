@@ -1,5 +1,5 @@
 #include <iostream>
-#include <conio>
+#include <conio.h>
 using namespace std;
 class Nodo
 {
@@ -192,14 +192,59 @@ void Arbol::insertar(Nodo*arbol, int n)
 }
 
 	
-
+//Angel
 	void postorden(Nodo * arbol)
 {
+	if (vacio())
+	{
+		cout << "Arbol vacio";
 
+	}
+	else
+	{
+		if (arbol != nullptr)
+		{
+			postorden(arbol->hijo_izquier);
+			postorden(arbol->hijo_derecho);
+			cout << arbol->valor << " ";
+		}
+
+		else
+		{
+			return;
+		}
+
+
+	}
 }
 
+//Angel
 	void preorden(Nodo * arbol)
 {
+	if (vacio())
+	{
+		cout << "Arbol vacio";
+
+	}
+	else
+	{
+
+		if (arbol != nullptr)
+		{
+			cout << arbol->valor << " ";
+			preorden(arbol->hijo_izquier);
+			
+			preorden(arbol->hijo_derecho);
+
+		}
+
+		else
+		{
+			return;
+		}
+
+
+	}
 
 }
 
