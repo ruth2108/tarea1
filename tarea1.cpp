@@ -111,12 +111,84 @@ void Arbol::insertar(Nodo*arbol, int n)
 
 	void inorden(Nodo * arbol)
 {
+	//Isai//
+		
+		if (vacio())
+	{
+		cout << "Arbol vacio";
 
+	}
+	else
+	{
+		if (arbol!=nullptr)
+		{
+			inorden(arbol->hijo_izquier);
+			cout << arbol->valor << " ";
+			inorden(arbol->hijo_derecho);
+
+		}
+
+		else
+		{
+			return;
+		}
+
+
+	}
 }
 
 	void Buscar(int n)
 {
+	//Isai//
+		if (vacio())
+	{
+		cout << "Arbol vacio";
 
+	}
+	else
+	{
+		Nodo *aux = raiz;
+		Nodo *padre = NULL;
+		while (aux->valor!=n)
+		{
+			padre = aux;
+
+			
+				if (n < aux->valor)
+				{
+					aux = aux->hijo_izquier;
+					
+
+				}
+				else if (n>aux->valor)
+				{
+					aux = aux->hijo_derecho;
+				
+				}
+			if (aux != nullptr)
+			{
+
+			}
+
+			else
+			{
+				cout << "Ese elemento no es parte del arbol";
+				return;
+			}
+		}
+
+		if (padre==NULL)
+		{
+			cout << "El elemto->" << aux->valor << "y es la raiz del arbol";
+		}
+		else
+		{
+			cout << "El elemto->" << aux->valor << "y es hijo de->" << padre->valor;
+
+		}
+		
+
+	}
 }
 
 	
