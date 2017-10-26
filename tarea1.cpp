@@ -38,7 +38,7 @@ public:
 
 	void Buscar(int n);
 
-	
+
 
 	void postorden(Nodo * arbol);
 
@@ -48,7 +48,7 @@ public:
 
 	void recorrido(int n);
 
-	
+
 
 	void eliminar(int n);
 
@@ -75,7 +75,7 @@ void Arbol::insertar(Nodo*arbol, int n)
 	Nodo *nuevo = new Nodo(n);
 	if (vacio())
 	{
-		
+
 		raiz = nuevo;
 
 	}
@@ -105,14 +105,14 @@ void Arbol::insertar(Nodo*arbol, int n)
 				}
 			}
 		}
-		
+
 	}
 }
 
 	void inorden(Nodo * arbol)
 {
 	//Isai//
-		
+
 		if (vacio())
 	{
 		cout << "Arbol vacio";
@@ -153,17 +153,17 @@ void Arbol::insertar(Nodo*arbol, int n)
 		{
 			padre = aux;
 
-			
+
 				if (n < aux->valor)
 				{
 					aux = aux->hijo_izquier;
-					
+
 
 				}
 				else if (n>aux->valor)
 				{
 					aux = aux->hijo_derecho;
-				
+
 				}
 			if (aux != nullptr)
 			{
@@ -186,12 +186,12 @@ void Arbol::insertar(Nodo*arbol, int n)
 			cout << "El elemto->" << aux->valor << "y es hijo de->" << padre->valor;
 
 		}
-		
+
 
 	}
 }
 
-	
+
 //Angel
 	void postorden(Nodo * arbol)
 {
@@ -233,7 +233,7 @@ void Arbol::insertar(Nodo*arbol, int n)
 		{
 			cout << arbol->valor << " ";
 			preorden(arbol->hijo_izquier);
-			
+
 			preorden(arbol->hijo_derecho);
 
 		}
@@ -250,24 +250,87 @@ void Arbol::insertar(Nodo*arbol, int n)
 
 	void mostrar_arbol(Nodo * arbol, int con)
 {
-
+    (Nodo* a, int n){
+    if(a != NULL){ // Si el árbol no está vacío
+        Alola(a->Derecha, n+1);
+        for(int i = 0; i < n; i++)
+            cout << " ";
+        cout << a->dato << endl;
+        Alola(a->Izquierda, n+1);
+    }
+}
 }
 
-	
 
-	
+
+
 
 	void eliminar(int n)
 {
+ NodoAB aux = null, aux1 = null, otro = null;
+            if (dato < r.Dato)
+            {
+                Eliminar(r.Izq, dato);
+            }
+            else
+            {
+                if (dato > r.Dato)
+                {
+                    Eliminar(r.Der, dato);
+                }
+                else
+                {
+                    otro = r;
 
+
+                    if (otro != null)
+                    {
+                        if ((otro.Der == null) && (otro.Izq == null))
+                        {
+                            otro = null;
+                        }
+                        else
+                        {
+                            if (otro.Der == null)
+                            {
+                                r = otro.Izq;
+
+                            }
+                            else
+                                if (otro.Izq == null)
+                                {
+                                    r= otro.Der;
+
+                                }
+                                else
+                                {
+                                    aux = otro.Izq;
+                                    aux1 = aux;
+                                    while (aux.Der != null)
+                                    {
+                                        aux1 = aux;
+                                        aux = aux.Der;
+                                    }
+                                    otro.Dato = aux.Dato;
+                                    otro = aux;
+                                    aux1.Der = aux.Izq;
+                                    aux = null;
+
+                                }
+                        }
+                    }
+                    else
+                        System.Windows.Forms.MessageBox.Show("Dato no encontrado en el arbol");
+                }
+            }
 }
 
 
 
 int main()
 {
-	
 
 
-	
- } 
+
+
+ }
