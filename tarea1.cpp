@@ -329,8 +329,92 @@ void Arbol::insertar(Nodo*arbol, int n)
 
 int main()
 {
+Arbol *op = new Arbol();
+	int menu, repmenu;
+	do {
+		system("cls");
+		cout << "Elija una opcion:\n1:Insertar un elemneto en el arbol\n2:Recorrer el arbol\n3:Mostrar el arbol\n4:Eliminar un nodo\n5:Buscar" << endl;
+		cin >> menu;
+		switch (menu)
+		{
+		case 1:
+		{
+			system("cls");
+			int dato;
+			cout << "Ingresa el dato: ";
+			cin >> dato;
+			op->insertar(op->getraiz(),dato);
+
+			break;
+		}
+		case 2:
+		{
+			system("cls");
+			int menu_re;
+			cout << "Elija una opcion de recorrido:\n1:InOrden\n2:PostOrden\n3:PreOrden\n: ";
+			cin >> menu_re;
+			cout << "Arbol:\n";
+			switch (menu_re)
+			{
+			case 1:
+			{
+				op->inorden(op->getraiz());
+				break;
+			
+			}
+			case 2:
+			{
+				op->postorden(op->getraiz());
+				break;
+
+			}
+			case 3:
+			{
+				op->preorden(op->getraiz());
+				break;
+
+			}
+			default:
+				break;
+			}
+			break;
+		}
+		case 3:
+		{
+			system("cls");
+			cout << "Diseño del arbol: \n";
+			op->mostrar_arbol(op->getraiz(), 0);
+			cout << "\n\nNota: Se debe mirar el arbol horizontalmente,empezando por la izquierda \n este algoritmo es totalmente sacado de internet\nFuente: Programacion ATS";
+			break;
+		}
+		case 4:
+		{
+			system("cls");
+			int n;
+			cout << "Introduce el numero a eliminar: ";
+			cin >> n;
+			op->eliminar(n);
+			break;
+		}
+		case 5:
+		{
+			int num;
+			cout << "Introduce el numero a buscar: ";
+			cin >> num;
+			op->Buscar(num);
+			break;
+		}
+	
+		default:
+			break;
+		}
+		cout << "\nDEsea realizar Otra operacion 1:si\n";
+		cin >> repmenu;
+	} while (repmenu == 1);
 
 
 
+	system("pause");
+    return 0;
 
  }
