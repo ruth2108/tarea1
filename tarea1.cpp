@@ -1,5 +1,20 @@
 #include <iostream>
 #include <conio.h>
+/*
+	El programa no corrió en mi computadora, me marcó muchos errores.
+	Sin embargo el objetivo de la práctica es que conozcan el uso correcto de control de versiones GIT
+	por lo que cumplen con el objetivo.
+	
+	INTEGRANTES EQUIPO
+	- SÁNCHEZ ZÁYAGO GUSTAVO ISAÍ
+	- CAMPOS  SANCHEZ RUTH SARAI
+	- BARCENAS CERON GILBERTO
+	- MENDOZA MEJÍA ÁNGEL SILVERIO
+	- VELAZQUEZ GARCIA CRISTIAN	
+	
+	Me imagino que el usuario "elDiScipulo" es Mendoza Mejía, traten de poner nombres representativos
+	de usuario para no tener inconvenientes en un futuro, ¿de acuerdo?
+*/
 using namespace std;
 class Nodo
 {
